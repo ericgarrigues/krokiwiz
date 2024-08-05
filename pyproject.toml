@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "krokiwiz"
+version = "0.1.0"
+description = "Kroki Wizard"
+authors = ["Eric Garrigues <eric.galion@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+nicegui = "^1.4.30"
+requests = "^2.32.3"
+certifi = "^2024.7.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
