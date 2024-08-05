@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "krokiwiz"
-version = "0.1.1"
+version = "0.1.2"
 description = "Kroki Wizard"
 authors = ["Eric Garrigues <eric.galion@gmail.com>"]
 license = "MIT"
