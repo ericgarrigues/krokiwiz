@@ -69,7 +69,7 @@ class SelectedLanguage:
 
     def __init__(self):
         self.lang = "blockdiag"
-        self.url = f"[{self.lang}]({graph_types[self.lang]})"
+        self.url = f"Documentation : [**CTRL** + {self.lang}]({graph_types[self.lang]})"
 
 
 selected_language = SelectedLanguage()
