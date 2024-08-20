@@ -1,6 +1,9 @@
 # krokiwiz: A simple kroki graph generator UI
 
 
+![krokiwiz](./images/krokiwiz.png)
+
+
 ## Requirements
 
 - a working kroki server
