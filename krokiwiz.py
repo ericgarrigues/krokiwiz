@@ -118,13 +118,13 @@ def index():
 
     with ui.row().classes("w-full"):
         default_graph_def = """blockdiag {
-                               Kroki -> generates -> "Block diagrams";
-                               Kroki -> is -> "very easy!";
-                             
-                               Kroki [color = "greenyellow"];
-                               "Block diagrams" [color = "pink"];
-                               "very easy!" [color = "orange"];
-                             }"""
+      Kroki -> generates -> "Block diagrams";
+      Kroki -> is -> "very easy!";
+    
+      Kroki [color = "greenyellow"];
+      "Block diagrams" [color = "pink"];
+      "very easy!" [color = "orange"];
+    }"""
 
         with ui.card().classes("w-[49%]") as generator:
             ui.markdown("### Select the graph type and output format")
@@ -137,15 +137,12 @@ def index():
                 graph_output = ui.select(kroki_formats,
                                          value=kroki_formats[0])
 
-            graph_definition = ui.textarea(
-                label="Edit graph definition",
-                placeholder=default_graph_def,
-                value=default_graph_def,
-            ).classes("w-full").bind_value(app.storage.user, 'graph_text')
+                ui.button("Generate", on_click=lambda: load_image())
 
-            ui.button("Generate", on_click=lambda: load_image())
+                ui.markdown().bind_content(selected_language, 'url')
 
-            ui.markdown().bind_content(selected_language, 'url')
+            graph_definition = ui.codemirror(default_graph_def,
+                                             theme='basicDark').classes('h-[100%] w-full').bind_value(app.storage.user, 'graph_text')
 
         with ui.card().classes("w-[49%]") as result:
             graph_url = get_graph_url()
@@ -155,6 +152,6 @@ def index():
                     f"**{graph_type.value}** generated kroki"
                 )
 
-    ui.markdown('**[Kroki exemples](https://kroki.io/examples.html)**')
+    ui.markdown('**[Kroki examples](https://kroki.io/examples.html)**')
 
 ui.run(title="Krokiwiz", favicon="🔮", storage_secret='toh1Ib3quuash7joh2veizae2thuaciengu6ohPaef8ziavo')
